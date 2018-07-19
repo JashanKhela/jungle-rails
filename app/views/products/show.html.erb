@@ -1,3 +1,4 @@
+
 <section class="products-show">
 
   <header class="page-header">
@@ -21,11 +22,35 @@
           <dt>Quantity</dt>
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+          <dd><%= humanized_money_with_symbol @product.price %></dd>
+          <dt>Average Star Rating</dt>
+          <% if @product.reviews.average(:rating) == nil%>
+          <dd> There are no ratings yet </dd>
+          <% else %>
+          <dd><%= @product.reviews.average(:rating).round(2) %></dd>
+          <% end %>
         </dl>
       </div>
     </div>
-
   </article>
 
+  <%= form_for :review, url: product_reviews_path(@product.id) do |f| %>
+    <%= f.text_area :description %>
+    Rating: <%= f.select(:rating, (1..5)) %>
+    <%= f.submit %>
+    <% end %>
+
+  <h2 class="page-header">Reviews</h2>
+  <% @product.reviews.each do |review| %>
+    <div class="well">
+      <h4>
+        <%= review.user.name %> 
+        <% review.rating.times do |star| %>
+          ⭐️
+        <% end %>
+      </h4>
+      <p><%= review.description %></p>
+      </div>
+
+  <% end %>
 </section>

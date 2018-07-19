@@ -134,3 +134,75 @@ cat3.products.create!({
 
 
 puts "DONE!"
+
+User.create!([
+  {
+    name:  'Jay',
+    email: 'user@hotmail.com',
+    password_digest: '123',
+  },
+  {
+    name:  'Bob',
+    email: 'user@hotmail.com',
+    password_digest: '123',
+  },
+  {
+    name:  'Randy',
+    email: 'user@hotmail.com',
+    password_digest: '123',
+  },
+  {
+    name:  'Barb',
+    email: 'user@hotmail.com',
+    password_digest: '123',
+  }])
+
+
+puts "Re-creating Reviews ..."
+
+Review.create!([
+  {
+    product_id:  1,
+    user_id: 1,
+    description: 'This product does function well',
+    rating: 5
+  },
+  {
+    product_id:  1,
+    user_id: 2,
+    description: 'This product does not function well',
+    rating: 1
+  },
+  {
+    product_id:  1,
+    user_id: 3,
+    description: 'Not as described',
+    rating: 1
+  },
+  {
+    product_id:  2,
+    user_id: 4,
+    description: 'The product does not fit me and I am very unhappy about it',
+    rating: 1
+  },
+  {
+    product_id:  1,
+    user_id: 1,
+    description: 'So happy with my purchase',
+    rating: 5
+  },
+  {
+    product_id:  2,
+    user_id: 1,
+    description: 'Love it WOOOOOOO',
+    rating: 4
+  },
+  {
+    product_id:  5,
+    user_id: 1,
+    description: 'Not as described, much smaller than photo leads on.',
+    rating: 1
+  }
+  ])
+
+puts "DONE!"
