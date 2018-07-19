@@ -1,0 +1,12 @@
+
+Welcome to Jungle and Thank You For Your Purchase.
+Below You Will Find A Summary Of Your Order
+
+<% @order.line_items.each do |item| %>
+    <%= item.product.name %>
+    <%= item.product.description %>
+<% end %>
+
+Your total: <%= @order.total %>
+ 
+Thank you for shopping with Jungle.
