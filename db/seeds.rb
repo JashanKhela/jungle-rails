@@ -164,13 +164,13 @@ Review.create!([
   {
     product_id:  1,
     user_id: 1,
-    description: 'This product does function well',
+    description: 'This product fits really well and I am very pleased.',
     rating: 5
   },
   {
     product_id:  1,
     user_id: 2,
-    description: 'This product does not function well',
+    description: 'This product came damaged in the box',
     rating: 1
   },
   {
@@ -193,7 +193,7 @@ Review.create!([
   },
   {
     product_id:  2,
-    user_id: 1,
+    user_id: 6,
     description: 'Love it WOOOOOOO',
     rating: 4
   },
