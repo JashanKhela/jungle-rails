@@ -35,10 +35,13 @@
   </article>
 
     <% if current_user %>
+    <h4>Create A Review</h4>
  <%= form_for :review, url: product_reviews_path(@product.id) do |f| %>
-   <%= f.text_area :description %>
+  
+  <%= f.text_area :description, style: 'width: 700px; display: block; margin-bottom: 5px;' %>
+ <h7>How many stars would you give this product ?</h7>
   <%= f.select :rating, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
-   <%= f.submit %>
+   <%= f.submit style: 'display: block; height: 30px; margin-top: 5px;' %>
    <% end %>
  <% end %>
 
