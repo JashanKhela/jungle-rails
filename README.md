@@ -3,11 +3,11 @@
 
 A mini e-commerce application built with Rails 4.2 for browsing and purchasing items for sale.
 
-
 ## Final Product
-!["Screenshot of Home Page "](https://github.com/JashanKhela/chattyApp/blob/master/docs/singleUser.png?raw=true)
-!["Screenshot of Home Page with two users"](https://github.com/JashanKhela/chattyApp/blob/master/docs/twoUsers.png?raw=true)
-!["Screenshot of Home page with multiple users connected"](https://github.com/JashanKhela/chattyApp/blob/master/docs/multipleUsers.png?raw=true)
+!["Screenshot of Home Page "](https://github.com/JashanKhela/jungle-rails/blob/master/docs/Home.png?raw=true)
+!["Screenshot of Prodcut Page"](https://github.com/JashanKhela/jungle-rails/blob/master/docs/ProductPage.png?raw=true)
+!["Screenshot of Reviews"](https://github.com/JashanKhela/jungle-rails/blob/master/docs/YourReview.png?raw=true)
+!["Screenshot of Order Summary"](https://github.com/JashanKhela/jungle-rails/blob/master/docs/OrderReceipt.png?raw=true)
 
 
 ## Dependencies
