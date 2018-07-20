@@ -34,14 +34,16 @@
     </div>
   </article>
 
-  <%= form_for :review, url: product_reviews_path(@product.id) do |f| %>
-    <%= f.text_area :description %>
-    Rating: <%= f.select(:rating, (1..5)) %>
-    <%= f.submit %>
-    <% end %>
+    <% if current_user %>
+ <%= form_for :review, url: product_reviews_path(@product.id) do |f| %>
+   <%= f.text_area :description %>
+  <%= f.select :rating, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+   <%= f.submit %>
+   <% end %>
+ <% end %>
 
   <h2 class="page-header">Reviews</h2>
-  <% @product.reviews.each do |review| %>
+  <% @product.reviews.reverse.each do |review| %>
     <div class="well">
       <h4>
         <%= review.user.name %> 
@@ -50,6 +52,11 @@
         <% end %>
       </h4>
       <p><%= review.description %></p>
+      <% if current_user %>
+        <% if review.user.id == current_user.id %>
+        <%= link_to "Delete", product_review_path(@product, review), class: "btn btn-xs btn-danger", :method => :delete %>
+        <% end %>
+        <% end %>
       </div>
 
   <% end %>
